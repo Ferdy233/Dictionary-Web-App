@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Dogbey Ferdinald">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&family=Inter:wght@400;700&family=Lora:ital,wght@0,400;0,700;1,700&display=swap"
+    rel="stylesheet">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="index.js"></script>
+
+  <title>Dictionary web app</title>
+</head>
+
+<body>
+  <header>
+    <img src="./assets/images/logo.svg" class="logo" alt="Logo" aria-hidden="true">
+    <div class="mode">
+      <div class="font-theme">
+        <input type="text" class="font-select" role="select" value="Sans Serif" readonly>
+        <img src="./assets/images/icon-arrow-down.svg" alt="Down Arrow" aria-hidden="true">
+        <ul class="list">
+          <li class="option" role="option" style="font-family: 'Inter', sans-serif;">Sans Serif</li>
+          <li class="option" role="option" style="font-family: 'Lora', serif;">Serif</li>
+          <li class="option" role="option" style="font-family: 'Inconsolata', monospace;">Mono</li>
+        </ul>
+      </div>
+      <span class="divider"></span>
+      <div class="dark-theme">
+        <input type="checkbox" id="darkmode-toggle">
+        <label for="darkmode-toggle"></label>
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 22 22">
+          <path fill="none" stroke="#838383" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="M1 10.449a10.544 10.544 0 0 0 19.993 4.686C11.544 15.135 6.858 10.448 6.858 1A10.545 10.545 0 0 0 1 10.449Z" />
+        </svg>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="search-bar">
+      <input type="text" class="search-bar-input" placeholder="Enter a word" id="search-input">
+      <span class="error-text hide">Whoops, can't be empty…</span>
+      <button aria-label="Search Button" class="search-button" id="search-button"><svg
+          xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+          <path fill="none" stroke="#A445ED" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+            d="m12.663 12.663 3.887 3.887M1 7.664a6.665 6.665 0 1 0 13.33 0 6.665 6.665 0 0 0-13.33 0Z" />
+        </svg></button>
+    </section>
+    <section class="not-found hide">
+      <span>😕</span>
+      <h1>No Definitions Found</h1>
+      <p>Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at
+        later time or head to the web instead.</p>
+    </section>
+    <section class="word hide">
+      <div class="phonetic">
+        <h1></h1>
+        <h2></h2>
+      </div>
+      <audio id="audio-player" controls>
+
+      </audio>
+      <div class="play-button hide" role="button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="75" height="75" viewBox="0 0 75 75">
+          <g fill="#A445ED" fill-rule="evenodd">
+            <circle cx="37.5" cy="37.5" r="37.5" opacity=".25" />
+            <path d="M29 27v21l21-10.5z" />
+          </g>
+        </svg>
+      </div>
+    </section>
+    <section class="meanings hide">
+    </section>
+  </main>
+  <footer class="source-urls hide">
+    <span></span>
+    <h3>Source</h3>
+  </footer>
+</body>
+
+</html>
